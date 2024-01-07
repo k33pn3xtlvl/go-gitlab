@@ -254,21 +254,23 @@ type IssueEvent struct {
 	} `json:"project"`
 	Repository       *Repository `json:"repository"`
 	ObjectAttributes struct {
-		ID          int    `json:"id"`
-		Title       string `json:"title"`
-		AssigneeID  int    `json:"assignee_id"`
-		AuthorID    int    `json:"author_id"`
-		ProjectID   int    `json:"project_id"`
-		CreatedAt   string `json:"created_at"` // Should be *time.Time (see Gitlab issue #21468)
-		UpdatedAt   string `json:"updated_at"` // Should be *time.Time (see Gitlab issue #21468)
-		Position    int    `json:"position"`
-		BranchName  string `json:"branch_name"`
-		Description string `json:"description"`
-		MilestoneID int    `json:"milestone_id"`
-		State       string `json:"state"`
-		IID         int    `json:"iid"`
-		URL         string `json:"url"`
-		Action      string `json:"action"`
+		ID                  int    `json:"id"`
+		Title               string `json:"title"`
+		AssigneeID          int    `json:"assignee_id"`
+		AuthorID            int    `json:"author_id"`
+		ProjectID           int    `json:"project_id"`
+		CreatedAt           string `json:"created_at"` // Should be *time.Time (see Gitlab issue #21468)
+		UpdatedAt           string `json:"updated_at"` // Should be *time.Time (see Gitlab issue #21468)
+		TotalTimeSpent      int    `json:"total_time_spent"`
+		HumanTotalTimeSpent string `json:"human_total_time_spent"`
+		Position            int    `json:"position"`
+		BranchName          string `json:"branch_name"`
+		Description         string `json:"description"`
+		MilestoneID         int    `json:"milestone_id"`
+		State               string `json:"state"`
+		IID                 int    `json:"iid"`
+		URL                 string `json:"url"`
+		Action              string `json:"action"`
 	} `json:"object_attributes"`
 	Assignee  *EventUser   `json:"assignee"`
 	Assignees *[]EventUser `json:"assignees"`
